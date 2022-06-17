@@ -61,7 +61,7 @@ resource "google_compute_instance_from_template" "centos_example" {
   name = "centos-${count.index}"
   source_instance_template = module.template_instance_centos.self_link
   zone = var.zone
-  metadata = local.metadata
+  metadata = local.metadata # Using  the metadata to configure the instance
 
   // Override fields from instance template
   network_interface {
